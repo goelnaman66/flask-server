@@ -113,7 +113,6 @@ def colaborativeFiltering_ItemBased_nmf(user_ratings, userID="672"):
     
     
 @app.route("/")
-@cross_origin
 def index():
     return "This is the home route"
 
