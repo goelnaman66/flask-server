@@ -11,7 +11,8 @@ from SimpleItemCF import runItemBasedColaborativeFiltering
 from NewItemCF import runnewItemBasedColaborativeFiltering
 from centredknn import runnmfItemBasedColaborativeFiltering
 # init app
-app = Flask(__name__)CORS(app)
+app = Flask(__name__)
+CORS(app)
 
 
 
@@ -117,7 +118,6 @@ def index():
     return "This is the home route"
 
 @app.route("/recommendations/usercolaborativefiltering", methods=["POST"])
-@cross_origin()
 def user_colaborativefiltering() :
     
     userID = request.json["userID"]
@@ -138,7 +138,6 @@ def user_colaborativefiltering() :
     
     
 @app.route("/recommendations/itemcolaborativefiltering", methods=["POST"])
-@cross_origin()
 def item_colaborativefiltering():
     userID = request.json["userID"]
     user_ratings = request.json["ratings"]
@@ -156,7 +155,6 @@ def item_colaborativefiltering():
     return jsonify(recommendations)
 
 @app.route("/recommendations/newitemcolaborativefiltering", methods=["POST"])
-@cross_origin()
 def newitem_colaborativefiltering():
     userID = request.json["userID"]
     user_ratings = request.json["ratings"]
@@ -174,7 +172,6 @@ def newitem_colaborativefiltering():
     return jsonify(recommendations)
 
 @app.route("/recommendations/nmfitemcolaborativefiltering", methods=["POST"])
-@cross_origin()
 def nmfitem_colaborativefiltering():
     userID = request.json["userID"]
     user_ratings = request.json["ratings"]
@@ -193,4 +190,4 @@ def nmfitem_colaborativefiltering():
 
 # RunServer
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run()
