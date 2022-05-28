@@ -192,4 +192,4 @@ def nmfitem_colaborativefiltering():
 
 # RunServer
 if __name__ == "__main__":
-    app.run(port=int("5001"))
+    app.run()
