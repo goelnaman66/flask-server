@@ -11,9 +11,8 @@ from SimpleItemCF import runItemBasedColaborativeFiltering
 from NewItemCF import runnewItemBasedColaborativeFiltering
 from centredknn import runnmfItemBasedColaborativeFiltering
 # init app
-app = Flask(__name__)
-CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
+app = Flask(__name__)CORS(app)
+
 
 
 link_df = pd.read_csv("ml-latest-small/links.csv")
