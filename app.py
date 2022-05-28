@@ -114,15 +114,9 @@ def colaborativeFiltering_ItemBased_nmf(user_ratings, userID="672"):
     
     
 @app.route("/")
+@cross_origin
 def index():
     return "This is the home route"
-
-@app.after_request
-def after_request(response):
-  response.headers.add('Access-Control-Allow-Origin', '*')
-  response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-  response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-  return response
 
 @app.route("/recommendations/usercolaborativefiltering", methods=["POST"])
 @cross_origin()
