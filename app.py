@@ -3,10 +3,11 @@ import pandas as pd
 import json
 import time
 import sys
+from flask_cors import CORS, cross_origin
 sys.path.append('CollaborativeFiltering/')
 from SimpleUserCF import runUserColaborativeFiltering
 from SimpleItemCF import runItemBasedColaborativeFiltering
-from flask_cors import CORS
+
 from NewItemCF import runnewItemBasedColaborativeFiltering
 from centredknn import runnmfItemBasedColaborativeFiltering
 # init app
