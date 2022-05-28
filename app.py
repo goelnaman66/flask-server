@@ -116,6 +116,7 @@ def index():
     return "This is the home route"
 
 @app.route("/recommendations/usercolaborativefiltering", methods=["POST"])
+@cross_origin()
 def user_colaborativefiltering() :
     
     userID = request.json["userID"]
@@ -136,6 +137,7 @@ def user_colaborativefiltering() :
     
     
 @app.route("/recommendations/itemcolaborativefiltering", methods=["POST"])
+@cross_origin()
 def item_colaborativefiltering():
     userID = request.json["userID"]
     user_ratings = request.json["ratings"]
@@ -153,6 +155,7 @@ def item_colaborativefiltering():
     return jsonify(recommendations)
 
 @app.route("/recommendations/newitemcolaborativefiltering", methods=["POST"])
+@cross_origin()
 def newitem_colaborativefiltering():
     userID = request.json["userID"]
     user_ratings = request.json["ratings"]
@@ -170,6 +173,7 @@ def newitem_colaborativefiltering():
     return jsonify(recommendations)
 
 @app.route("/recommendations/nmfitemcolaborativefiltering", methods=["POST"])
+@cross_origin()
 def nmfitem_colaborativefiltering():
     userID = request.json["userID"]
     user_ratings = request.json["ratings"]
